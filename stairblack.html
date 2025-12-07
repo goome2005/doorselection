@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계단 (검정 문 경로)</title>
+    <link rel="stylesheet" href="door.css"> 
+    <style>
+        /* 텍스트 박스를 기준으로 삼기 위해 position: relative 설정 */
+        .black-route .bottom-text {
+            position: relative;
+        }
+        
+        /* 화살표를 텍스트 박스 상단 중앙에 배치 */
+        .black-route .arrow-up-link {
+            position: absolute;
+            top: 0; 
+            left: 50%;
+            /* 가로 중앙 정렬 및 화살표 높이의 절반만큼 위로 이동 */
+            transform: translate(-50%, -50%); 
+            z-index: 20; 
+            /* 크기는 door.css의 .arrow-up-link에서 상속받음 */
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container stairs-page black-route">
+        
+        <a href="hallway3.html" class="clickable-area arrow-up-link">
+            <div class="arrow-up"></div> 
+        </a>
+        
+        <div class="info-box bottom-text">
+            <p>어두운 복도를 선택한 당식에게는 어두운 계단이 나타납니다.</p>
+            <p>당신이 밟아온 길을 되돌아보는 시간이 될 것입니다.</p>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025. 안예영 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

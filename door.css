@@ -1,0 +1,416 @@
+/* styles.css 파일 */
+
+html, body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* 배경색 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+flex-direction: column;}
+
+.page-container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.main-quote {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.door-link {
+    display: block;
+    margin: 0 auto;
+    width: fit-content; /* 이미지 크기에 맞춰 링크 영역 설정 */
+}
+
+.main-door-image {
+    /* 스케치에 따라 세로 크기 500px, 가로 비율 유지로 설정 */
+    height: 500px; 
+    width: auto; 
+    object-fit: contain; 
+    border: 1px solid #ccc; /* 문의 경계를 구분하기 위한 테두리 */
+}
+
+.info-box {
+    margin-top: 30px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    font-size: 0.9em;
+    color: #666;
+}
+.info-box p {
+    margin: 5px 0;
+}
+
+
+/* styles.css 파일에 있는 .hallway-page 및 .center-door 부분을 수정하세요 */
+
+/* 복도 페이지 컨테이너 스타일 */
+.hallway-page {
+    max-width: none; 
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    
+    /* 복도 이미지 배경 설정 (기존과 동일) */
+    background-image: url('corridorimg/IMG_0164.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+/* 🚪 복도 중앙에 띄울 문 이미지 컨테이너 */
+.center-door {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-33%, -50%); /* 화면 중앙 정렬 */
+    z-index: 10; 
+    
+    /* ✨ 수정 핵심 1: 문 컨테이너의 최대 크기 지정 */
+    /* 화면 너비의 30%를 최대 너비로, 화면 높이의 60%를 최대 높이로 제한합니다. 
+       (이 값을 조정하여 문 크기를 바꿀 수 있습니다.) */
+    max-width: 10vw; 
+    max-height: 40vh;
+    
+    /* 너비와 높이를 'auto'로 두어 이미지 크기에 맞춥니다. */
+    width: auto;
+    height: auto;
+}
+
+.center-door .door-image {
+    /* ✨ 수정 핵심 2: 문 이미지는 부모 컨테이너 크기에 맞춰 축소됩니다. */
+    width: 100%;
+    height: 100%;
+    
+    /* 비율을 유지하면서 컨테이너 안에 꼭 맞게 표시 */
+    object-fit: contain; 
+    
+    cursor: pointer; 
+}
+
+
+/* 페이지 하단 텍스트 (bottom-text) 스타일은 그대로 유지 */
+/* ... */
+
+/* 페이지 하단 텍스트 (복도 이미지 위에 배치) */
+.bottom-text {
+    /* 복도 배경 위에 흰색 박스를 씌워서 텍스트가 잘 보이게 함 */
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    width: 80%;
+    max-width: 450px;
+}
+
+
+
+/* styles.css 파일에 아래 내용을 추가하거나 기존 코드를 수정하세요 */
+
+/* ✨ 1. 갈림길 페이지 컨테이너 스타일 (배경 이미지 적용) */
+.fork-page {
+    max-width: none; 
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    
+    /* 배경 이미지를 설정합니다. (✨이미지 파일명을 실제 파일명으로 교체해주세요.) */
+    background-image: url('corridorimg/IMG_0282.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 문들을 중앙에 배치 */
+    align-items: center;
+}
+
+/* door.css 파일의 .door-choice-grid 부분 수정 */
+
+/* door.css 파일의 .door-choice-grid 부분 수정 */
+
+.door-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; 
+    
+    width: 100vw; 
+    margin: 0; 
+    max-width: none; 
+    padding: 0 20px; 
+    box-sizing: border-box; 
+    
+    /* ✨ 수정 핵심 1: 문들을 아래로 살짝 내리기 */
+    margin-top: 250px; /* 50px만큼 아래로 내립니다. 이 값은 필요에 따라 조절하세요. */
+    /* ✨ 수정 핵심 3: 텍스트 박스를 페이지 하단으로 강제 이동 */
+    margin-bottom: auto; /* Flexbox 내에서 남은 공간을 모두 차지합니다. */
+}
+
+/* 3. 공통 문 이미지 크기 설정 */
+.choice-door-image {
+    /* 일반적인 문 크기 (하얀 문 기준) */
+    height: 250px; 
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+/* 4. ✨ 검정 문 (우측)만 크기 키우기 */
+.black-door-image {
+    /* 기존 400px보다 더 크게 설정 */
+    height: 250px; 
+}
+
+/* 5. ✨ 하얀 문 (좌측)을 왼쪽으로 붙이고, 검정 문 (우측)을 오른쪽으로 붙이기 */
+
+/* door.css 파일의 .white-door-area와 .black-door-area 부분 수정 */
+
+/* 하얀 문 영역 (좌측 끝에서 100px 떨어지게) */
+.white-door-area {
+    justify-self: start; 
+    
+    /* ✨ 수정 핵심 2: 왼쪽에 80px 추가 마진 (20px 패딩 + 80px 마진 = 100px 총 거리) */
+    margin-left: 120px; 
+    padding-left: 0; 
+}
+
+/* 검정 문 영역 (우측 끝에서 50px 떨어지게) */
+.black-door-area {
+    justify-self: end;
+    
+    /* ✨ 수정 핵심 2: 오른쪽에 30px 추가 마진 (20px 패딩 + 30px 마진 = 50px 총 거리) */
+    margin-right: 30px; 
+    padding-right: 0;
+}
+
+
+/* door.css 파일에 아래 내용을 추가하세요 */
+
+/* 하얀 문 경로 전용 배경 이미지 설정 */
+.whitedoor-route {
+    /* ✨ 배경 이미지 파일명을 실제 파일명으로 교체해주세요. */
+    background-image: url('corridorimg/IMG_0279.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+/* 💡 참고: 문 이미지의 크기 및 위치 조정 코드는 이미 기존 styles.css 파일의 
+   .hallway-page, .center-door, .door-image 클래스에 적용되어 있으므로 추가 수정은 필요 없습니다. */
+
+
+
+   /* door.css 파일에 아래 내용을 추가하세요 */
+
+/* 검정 문 경로 전용 배경 이미지 설정 */
+.blackdoor-route {
+    /* ✨ 배경 이미지 파일명을 실제 파일명으로 교체해주세요. */
+    background-image: url('corridorimg/IMG_0284.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+
+/* door.css 파일에 아래 내용을 추가하세요 */
+
+/* 계단 페이지 공통 스타일 (기존 코드가 있다면 재확인) */
+.stairs-page {
+    max-width: none; 
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 하단 텍스트를 바닥에 배치 */
+    align-items: center;
+}
+
+/* 🖼️ 하얀 문 경로 계단 배경 */
+.stairs-page.white-route {
+    /* ✨ 배경 이미지 파일명을 실제 파일명으로 교체해주세요. (whitestair.jpg 사용) */
+    background-image: url('corridorimg/IMG_0311.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+
+/* ⬆️ 상단 중앙 화살표 스타일 (클릭 영역) */
+.arrow-up-link {
+    position: absolute;
+    top: 5%; /* 상단에서 5% 떨어진 위치 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20; 
+    
+    /* 클릭 영역의 크기 (화살표가 잘 클릭되도록 충분히 넓게) */
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    /* 디버깅 시에만 사용: border: 2px solid rgba(255, 0, 0, 0.5); */
+}
+
+/* 실제 화살표 모양 (CSS 삼각형 사용) */
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent; /* 좌측 변 */
+    border-right: 30px solid transparent; /* 우측 변 */
+    border-bottom: 50px solid #fff; /* 하단 변(실제 보이는 화살표) */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* 그림자 */
+    opacity: 0.8;
+}
+
+
+/* door.css 파일에 아래 내용을 추가하세요 */
+
+/* 🖼️ 검정 문 경로 계단 배경 */
+.stairs-page.black-route {
+    /* ✨ 배경 이미지 파일명을 실제 파일명으로 교체해주세요. (검정 문 경로 계단 이미지) */
+    background-image: url('corridorimg/IMG_0291.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+
+
+/* door.css 파일에 아래 내용을 추가하세요 */
+
+/* 🖼️ hallway2 (하얀 문 경로) 전용 배경 이미지 설정 */
+.hallway2-white-route {
+    /* 마지막밝은.jpg 사용 */
+    background-image: url('corridorimg/IMG_0290.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+/* door.css 파일에 추가/수정 */
+
+/* 🚪 hallway2 (밝은 길) 전용 문 크기 및 위치 조정 스타일 */
+.hallway2-white-route .center-door {
+    /* 크기 조정: 기본 크기보다 조금 크게 */
+    max-width: 14vw; 
+    max-height: 38vh; 
+    
+    /* 위치 조정: 왼쪽으로 치우치게 */
+    top: 50%; 
+    left: 50%;
+    /* X축을 -50% 대신 -55%로 설정하여 왼쪽으로 5% 더 이동 */
+    transform: translate(-53%, -58%); 
+}
+
+
+/* door.css 파일 (이미 추가되었다고 가정합니다) */
+
+/* 🖼️ hallway3 (검정 문 경로) 전용 배경 이미지 설정 */
+.hallway3-black-route {
+    /* 어두운복도.jpg 사용 */
+    background-image: url('corridorimg/IMG_0304.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+/* 🚪 최종 복도 문 크기 및 위치 조정 스타일 (hallway2와 동일하게 적용) */
+.final-hallway-door-adjustment .center-door {
+    /* 크기 조정: 기본 크기보다 조금 크게 */
+    max-width: 5vw; 
+    max-height: 15vh; 
+    
+    /* 위치 조정: 왼쪽으로 치우치게 */
+    top: 50%; 
+    left: 50%;
+    /* X축을 -50% 대신 -55%로 설정하여 왼쪽으로 5% 더 이동 */
+    transform: translate(-28%, -110%); 
+}
+
+
+
+/* door.css 파일에 아래 내용을 추가하세요 */
+
+/* 🖼️ 결과 페이지 공통 스타일 */
+.result-page {
+    /* 배경은 단순한 색상 또는 공통 이미지를 사용할 수 있습니다. */
+    background-color: #f0f0f0; /* 밝은 회색 배경 */
+    /* 또는 배경 이미지 사용: background-image: url('corridorimg/final_bg.jpg'); */
+    
+    max-width: none; 
+    width: 100vw;
+    height: 100vh;
+    display: flex; /* Flexbox를 사용하여 중앙에 배치 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    padding: 20px;
+}
+
+/* 🏆 결과 메시지 박스 스타일 */
+.result-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+.result-box h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.result-box p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.result-box .final-message {
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 25px;
+}
+
+/* ↩️ 처음으로 돌아가는 버튼 스타일 */
+.restart-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.restart-button:hover {
+    background-color: #0056b3;
+}

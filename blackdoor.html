@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검정 문 경로</title>
+    <link rel="stylesheet" href="door.css"> 
+    <style>
+        .blackdoor-route .center-door {
+            /* 1. 크기 조정: max-width와 max-height를 늘려 문을 더 크게 만듭니다. */
+            max-width: 15vw; /* 20vw에서 25vw로 증가 (더 넓게) */
+            max-height: 40vh; /* 50vh에서 60vh로 증가 (더 높게) */
+            
+            /* 2. 위치 조정: 왼쪽으로 더 이동하기 위해 X축 translate 값을 조정합니다. */
+            top: 50%; 
+            left: 50%;
+            /* -50% (중앙) 대신 -65%로 설정하여 왼쪽으로 더 많이 이동 */
+            transform: translate(-53%, -48%); 
+        }
+    </style>
+    </head>
+<body>
+    <div class="page-container hallway-page blackdoor-route">
+        
+        <a href="stairblack.html" class="door-link center-door">
+            <img src="doorimg/twoblackdoor.jpg" alt="검정 문 경로 끝 문" class="door-image">
+        </a>
+        
+        <div class="info-box bottom-text">
+            <p>미지의 길을 택한 당신에게는 어둡고 깊은 복도가 펼쳐집니다. 이 길의 끝에서 어떤 비밀을 발견하게 될까요?</p>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025. 안예영 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>
